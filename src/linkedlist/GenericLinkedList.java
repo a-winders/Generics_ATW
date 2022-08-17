@@ -16,8 +16,8 @@ public class GenericLinkedList <GenericNode, T> {
 	 * to return the number of elements in the 
 	 * list.
 	 */ 
-	private T head; //node to represent the head of the list
-	private T tail; //node to represent the tail (end) of the list
+	private GenericNode head; //node to represent the head of the list
+	private GenericNode tail; //node to represent the tail (end) of the list
 	private int length; //variable to keep track of the number of elements in the list
 	
 	/**
@@ -30,7 +30,7 @@ public class GenericLinkedList <GenericNode, T> {
 	{
 		head = null;
 		length = 0;
-		tail=head;
+		tail = head;
 	}//end empty-argument constructor
 	
 	/**
@@ -48,7 +48,7 @@ public class GenericLinkedList <GenericNode, T> {
 	 * you can traverse the entire by following node links.
 	 * @return
 	 */
-	public T getList()
+	public GenericNode getList(T GenericNode)
 	{
 		return head;
 	}//end getList
@@ -62,16 +62,22 @@ public class GenericLinkedList <GenericNode, T> {
 	 * of the list.
 	 * @param aNode
 	 */
-	public void addNode(T aNode)
+	public void addNode(T GenericNode)
 	{
 		if (isEmpty() ) {
-			head = aNode;
+			head = (GenericNode) GenericNode;
 			tail=head;
 			return;
 		}
-		
-		tail.setNextNode(aNode);
-		tail=tail.getNextNode();
+		/*
+		 * Added "nextNode" to argument for setNextNode
+		 * since it will point to the next node in the
+		 * linked list. Can't seem to figure out the 
+		 * correct syntax though - which means my main class
+		 * also will not run. Ugh!
+		 */
+		tail.setNextNode(nextNode);
+		tail = tail.getNextNode();
 		tail.setNextNode(null);
 		length++;
 		

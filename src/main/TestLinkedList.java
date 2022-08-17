@@ -1,10 +1,11 @@
 package main;
 import linkedlist.Node;
+import linkedlist.GenericLinkedList;
 import linkedlist.LinkedList;
 
 public class TestLinkedList {
 
-	public static void main(String[] args) {
+	public static <T> void main(String[] args) {
 		
 		LinkedList myList=new LinkedList();
 		
@@ -27,11 +28,18 @@ public class TestLinkedList {
 	 * Created GenericLinkedList objects to hold
 	 * integers, doubles, and Strings.
 	 */
-	GenericLinkedList <Integer> intList = new GenericLinkedList<>();	
+	GenericLinkedList <Integer> intArray = new GenericLinkedList<Integer>(1,2,3);	
+	System.out.print("Integer array contains: ");
+	displayArray(intArray);
 	
-	GenericLinkedList <double> doubleList = new GenericLinkedList<>();
+	
+	GenericLinkedList <Double> doubleArray = new GenericLinkedList<>(1.0, 2.0, 3.0);
+	System.out.print("Double array contains: ");
+	displayArray(doubleArray);
 		
-	GenericLinkedList <String> stringList = new GenericLinkedList<>();
+	GenericLinkedList <String> stringArray = new GenericLinkedList<>("Adam", "Nikki", "Sophie", "Hei-Hei");
+	System.out.print("String array contains: ");
+	displayArray(stringArray);
 	
 	}//end main
 

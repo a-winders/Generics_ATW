@@ -20,7 +20,7 @@ public class GenericNode <T> {
 	 * to accept data of any type. 
 	 */
 	private T data;  //data that the object stores
-	private T nextNode; //pointer to the nextNode that will be in LinkedList
+	private GenericNode nextNode; //pointer to the nextNode that will be in LinkedList
 	
 	/**
 	 * Constructor build Node object. Initializes nextNode and data
@@ -75,7 +75,7 @@ public class GenericNode <T> {
 	 */
 	public void setNextNode(T nextNode)
 	{
-		this.nextNode=nextNode;
+		this.nextNode = (GenericNode<T>) nextNode;
 	}//end setNextNode
 	
 	/**
@@ -87,7 +87,7 @@ public class GenericNode <T> {
 	 * what was input. 
 	 * i.e. String, double, int, etc.
 	 */
-	public T getNextNode() {
+	public GenericNode getNextNode() {
 		return nextNode;
 	}//end getNextNode
 	
